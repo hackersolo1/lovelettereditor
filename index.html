@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Letter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <h1>Love Letter Studio</h1>
+        <div class="btn-container">
+            <button class="visu" id="primary-view">Visualizar</button>
+        </div>
+    </header>
+    <div class="wrap"></div>
+    <main>
+        <div class="primary">
+            <div class="cont">
+                <i class="fa-solid fa-font"></i>
+                <h2>Conteúdo</h2>
+
+                <div class="mensage-cont">
+                    <label for="nameParc">Nome do(a) parceiro(a)</label>
+                    <input type="text" name="nameParc" id="nameParc" placeholder="Ex: Maria">
+                    <label for="mensageText">Sua carta</label>
+                    <textarea name="mensageText" id="mensageText" rows="10" placeholder="Querido(a) amor..."></textarea>
+                </div>
+            </div>
+
+            <div class="cont">
+                <i class="fa-solid fa-image"></i>
+                <h2>Mídia</h2>
+
+                <div class="midia-cont">
+                    <label for="imageUrl">URL da imagem</label>
+                    <input type="url" name="imageUrk" id="imageUrl" placeholder="https://...">
+                    <label for="musicUrl">URL da música</label>
+                    <input type="url" name="musicUrl" id="musicUrl" placeholder="https://exemplo.com/musica.mp3">
+                </div>
+            </div>
+
+            <div class="cont">
+                <i class="fa-solid fa-palette"></i>
+                <h2>Estilo</h2>
+
+                <div class="style-cont">
+                    <h3>Tema (fundo):</h3>
+                    <div class="btn-cont-style">
+                        <button class="white-theme">
+                            <span style="background: white;"></span>
+                            Branco clássico
+                        </button>
+                        <button class="night-theme">
+                            <span style="background: #0f172a"></span>
+                            Noite estrelada
+                        </button>
+                    </div>
+                </div>
+
+                <div class="font-cont">
+                    <h3>Tipografa</h3>
+                    <button style="font-family: serif;" class="serif">Serif (elegante)</button>
+                    <button
+                        style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"
+                        class="sans">Sans
+                        (moderno)</button>
+                    <button style="font-family: monospace;" class="mono">Mono (técnino)</button>
+                    <button style="font-family: cursive;" class="cursiva">Cursiva (manuscrito)</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="preview-cont">
+        <div class="preview">
+            <img src="" alt="">
+            <h2>Para você,</h2>
+            <h3>O nome ficará assim</h3>
+            <p>Esse texto é apenas uma alternativa para que você possa testar as fontes, imagens e tema. Assim que você
+                preencher as informações necessárias (nome, mensagem e o link da imagem), esses textos serão
+                substituidos...</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
