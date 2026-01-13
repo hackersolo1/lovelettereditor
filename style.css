@@ -262,10 +262,15 @@ main {
 
 @media (max-width: 768px) {
     .preview h2 {
-        font-size: 20px;
+        font-size: 26px;
     }
 
     .preview h3 {
-        font-size: 1em;
+        font-size: 3em;
+    }
+
+    .preview p {
+        font-size: 1.5em;
+        text-align: center;
     }
 }
