@@ -273,5 +273,20 @@ main {
     .preview p {
         font-size: 1.5em;
         text-align: center;
+        .preview h2 {
+        font-size: 26px;
+    }
+
+    .preview h3 {
+        font-size: 3em;
+    }
+
+    .preview p {
+        font-size: 1.5em;
+        text-align: center;
+        margin: 5px;
+        margin-top: 25px;
+    }
+
     }
 }
