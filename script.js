@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const headerTitle = document.querySelector("#header-title");
+    const downloadBtn = document.querySelector('.downloadBtn');
     const visuBtn = document.querySelector(".visu");
     const parcInput = document.querySelector("#nameParc");
     const mensageInput = document.querySelector("#mensageText");
@@ -28,6 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
     previewH2.style.color = "#4a4a4a";
     previewH3.style.color = "#d63384";
     previewP.style.color = "#2d2d2d";
+    downloadBtn.style.display = 'none';
+    preview.style.borderRadius = '20px';
     // --
 
     // Input's code's
@@ -117,6 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
     visuBtn.addEventListener("click", () => {
         if (visuBtn.textContent == "Visualizar") {
             previewCont.style.animation = "show 0.3s ease-in-out forwards";
+            downloadBtn.style.display = 'flex';
             setTimeout(() => {
                 visuBtn.textContent = "Editor";
             }, 100);
@@ -124,10 +128,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (visuBtn.textContent == "Editor") {
             previewCont.style.animation = "unshow 0.3s ease-in-out forwards";
+            downloadBtn.style.display = 'none';
             setTimeout(() => {
                 visuBtn.textContent = "Visualizar";
             }, 100);
         }
     });
     // --
+
+
+    // Download Code 
+    downloadBtn.addEventListener('click', () => {
+        preview.style.borderRadius = '0px';
+        preview.style.height = 'auto';
+        html2canvas(preview).then(canvas => {
+            const img = canvas.toDataURL('imagem/png');
+            setTimeout(() => {
+                const link = document.createElement('a');
+                link.href = img;
+                link.download = img;
+                link.click();
+            }, 100);
+        });
+        
+        setTimeout(() => {
+            preview.style.borderRadius = '20px';
+            preview.style.height = '100%'
+        }, 200);
+    });
 });

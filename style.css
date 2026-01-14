@@ -45,6 +45,9 @@ header {
     border-bottom-right-radius: 20px;
 
     .btn-container {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 20px;
         button {
             font-family: "Space Grotesk";
             padding: 10px 20px 10px 20px;
@@ -55,11 +58,13 @@ header {
             color: #749BF5;
             transition: all 0.2s ease-in-out;
             cursor: pointer;
+            
         }
 
         button:hover {
             color: white;
             background: #749BF5;
+            transform: scale(1.03);
         }
     }
 }
