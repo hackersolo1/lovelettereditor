@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
             setTimeout(() => {
                 const link = document.createElement('a');
                 link.href = img;
-                link.download = img;
+                link.download = 'carta-personalizada.png';
                 link.click();
             }, 100);
         });
