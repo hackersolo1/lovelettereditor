@@ -48,6 +48,7 @@ header {
         display: flex;
         justify-content: space-evenly;
         gap: 20px;
+
         button {
             font-family: "Space Grotesk";
             padding: 10px 20px 10px 20px;
@@ -58,7 +59,7 @@ header {
             color: #749BF5;
             transition: all 0.2s ease-in-out;
             cursor: pointer;
-            
+
         }
 
         button:hover {
@@ -175,6 +176,12 @@ main {
                     color: #FFD700;
                     border: 4px solid #0F172A;
                 }
+
+                .custom-theme {
+                    background: rgb(0, 35, 114);
+                    color: white;
+                    border: 4px solid rgb(0, 35, 114);
+                }
             }
         }
 
@@ -241,6 +248,72 @@ main {
     }
 }
 
+.custom-title-window,
+.custom-subtitle-window,
+.custom-mensage-window,
+.custom-background-window {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+    background: rgba(116, 155, 245, 0.5);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Space Grotesk';
+    opacity: 0;
+
+    h2,
+    h3,
+    p {
+        font-size: 4em;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    input {
+
+        width: 100px;
+        height: 100px;
+        border-radius: 20px;
+        border: none;
+    }
+
+    input::-webkit-color-swatch-wrapper {
+        padding: 0;
+    }
+
+    input::-webkit-color-swatch {
+        border: none;
+    }
+
+    button {
+        margin-top: 20px;
+        background: rgb(0, 35, 114);
+        font-size: 20px;
+        padding: 10px 10px 10px 10px;
+        text-align: start;
+        color: white;
+        font-family: "Space Grotesk";
+        border: none;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+
+    button:hover {
+        transform: scale(1.10);
+    }
+}
+
+
 @keyframes show {
     from {
         z-index: -2;
@@ -256,6 +329,30 @@ main {
 @keyframes unshow {
     from {
         z-index: 9;
+        opacity: 1;
+    }
+
+    to {
+        z-index: -2;
+        opacity: 0;
+    }
+}
+
+@keyframes show2 {
+    from {
+        z-index: -2;
+        opacity: 0;
+    }
+
+    to {
+        z-index: 8;
+        opacity: 1;
+    }
+}
+
+@keyframes unshow2 {
+    from {
+        z-index: 8;
         opacity: 1;
     }
 
