@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Input's const's
     const parcInput = document.querySelector("#nameParc");
     const mensageInput = document.querySelector("#mensageText");
-    const imageInput = document.querySelector("#imageUrl");
+    const imageInput = document.querySelector("#imgUrl");
     const musicInput = document.querySelector("#musicUrl");
     // --
 
@@ -67,6 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // --
 
 
+    
 
     // Default code
     serifBtn.style.border = "4px solid white";
@@ -334,7 +335,14 @@ document.addEventListener("DOMContentLoaded", () => {
     customThemeBtnClose3.addEventListener('click', () => {
         customThemeMensageWindow.style.animation = 'unshow 0.3s ease-in-out forwards';
     });
-
-
     // ---
+
+
+    // Img code's 
+    imageInput.addEventListener('change', () => {
+        const file = imageInput.files[0];
+        const link = URL.createObjectURL(file);      
+        previewImg.src = link;
+    });
+    // --
 });

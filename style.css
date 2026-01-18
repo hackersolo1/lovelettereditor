@@ -246,6 +246,14 @@ main {
         white-space: pre-wrap;
         word-wrap: break-word;
     }
+
+    img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
 }
 
 .custom-title-window,
