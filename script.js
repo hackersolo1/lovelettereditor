@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Preview const's
     const previewCont = document.querySelector(".preview-cont");
     const preview = document.querySelector(".preview");
-    const previewImg = document.querySelector(".preview img");
+    const previewImg = document.querySelector(".preview .img");
     const previewH2 = document.querySelector(".preview h2");
     const previewH3 = document.querySelector(".preview h3");
     const previewP = document.querySelector(".preview p");
@@ -342,7 +342,7 @@ document.addEventListener("DOMContentLoaded", () => {
     imageInput.addEventListener('change', () => {
         const file = imageInput.files[0];
         const link = URL.createObjectURL(file);      
-        previewImg.src = link;
+        previewImg.style.backgroundImage = `url(${link})`;
     });
     // --
 });
