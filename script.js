@@ -342,7 +342,7 @@ document.addEventListener("DOMContentLoaded", () => {
     imageInput.addEventListener('change', () => {
         const file = imageInput.files[0];
         const link = URL.createObjectURL(file);      
-        previewImg.style.backgroundImage = `url(${link})`;
+        previewImg.style.background = `url(${link})`;
     });
     // --
 });
