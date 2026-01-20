@@ -228,6 +228,7 @@ main {
         border-radius: 20px;
         text-align: center;
         overflow-y: scroll;
+        padding-top: 20px;
     }
 
     h2 {
@@ -403,4 +404,5 @@ main {
         margin-right: 5px;
         margin-top: 30px;
     }
+
 }
