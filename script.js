@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    function previewWindow(active, atualText) {
+    function previewWindow(active, atualText, downBtn) {
         document.querySelector('.preview-cont').style.animation = `${active} 0.3s ease-in-out forwards`;
         setTimeout(() => {
             visuBtn.innerText = `${atualText}`;
+            document.querySelector('.downloadBtn').style.display = `${downBtn}`;
         }, 100);
     }
 
@@ -20,11 +21,16 @@ document.addEventListener('DOMContentLoaded', () => {
             e.style.border = THEMEINFO.border.borderOff;
         });
         document.querySelector('.serif').style.border = THEMEINFO.border.borderOn;
+        document.querySelector('.downloadBtn').style.display = 'none';
     }
 
     function switchBorder(whiteBtn, nightBtn) {
         document.querySelector('.white-theme').style.border = whiteBtn;
         document.querySelector('.night-theme').style.border = nightBtn;
+    }
+
+    function downloads() {
+
     }
 
     const THEMEINFO = {
@@ -61,10 +67,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     visuBtn.addEventListener('click', () => {
         if (visuBtn.innerText == 'Visualizar') {
-            previewWindow('show', 'Editor');
+            previewWindow('show', 'Editor', 'block');
         }
         if (visuBtn.innerText == 'Editor') {
-            previewWindow('unshow', 'Visualizar');
+            previewWindow('unshow', 'Visualizar', 'none');
         }
     });
 
@@ -122,6 +128,17 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelector('.preview').style.fontFamily = THEMEINFO.fonts.cursiva;
             document.querySelector('.cursiva').style.border = THEMEINFO.border.borderOn;
         }
+    });
+
+    document.querySelector('.downloadBtn').addEventListener('click', () => {
+        html2canvas(document.querySelector('.preview')).then(canvas => {
+            const link = canvas.toDataURL();
+            const a = document.createElement('a');
+            a.href = link;
+            a.download = 'carta-personalizada.png';
+            a.click();
+
+        });
     });
     defaults();
 })
