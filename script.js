@@ -138,6 +138,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 link.download = 'carta-personalizada.png';
                 link.click();
             }, 100);
+            setTimeout(() => { 
+document.querySelector('.preview').style.borderRadius = '20px';
+document.querySelector('.preview').style.height = '100%';
+}), 200);
+
         });
     });
     defaults();
