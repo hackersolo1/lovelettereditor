@@ -131,14 +131,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.querySelector('.downloadBtn').addEventListener('click', () => {
-        html2canvas(document.querySelector('.preview')).then(canvas => {
-            const link = canvas.toDataURL();
-            const a = document.createElement('a');
-            a.href = link;
-            a.download = 'carta-personalizada.png';
-            a.click();
-
+        preview.style.borderRadius = '0px';
+        preview.style.height = 'auto';
+        html2canvas(preview).then(canvas => {
+            const img = canvas.toDataURL('imagem/png');
+            setTimeout(() => {
+                const link = document.createElement('a');
+                link.href = img;
+                link.download = 'carta-personalizada.png';
+                link.click();
+            }, 100);
         });
     });
     defaults();
 })
+
