@@ -29,9 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.night-theme').style.border = nightBtn;
     }
 
-    function downloads() {
-
-    }
 
     const THEMEINFO = {
         theme: {
