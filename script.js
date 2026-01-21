@@ -131,9 +131,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.querySelector('.downloadBtn').addEventListener('click', () => {
-        preview.style.borderRadius = '0px';
-        preview.style.height = 'auto';
-        html2canvas(preview).then(canvas => {
+        document.querySelector('.preview').style.borderRadius = '0px';
+        document.querySelector('.preview').style.height = 'auto';
+        html2canvas(document.querySelector('.preview')).then(canvas => {
             const img = canvas.toDataURL('imagem/png');
             setTimeout(() => {
                 const link = document.createElement('a');
@@ -145,4 +145,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     defaults();
 })
+
 
