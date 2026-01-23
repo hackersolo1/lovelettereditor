@@ -2,6 +2,77 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
 
+@font-face {
+    font-family: 'arvo';
+    src: url(Fontes/arvo/Arvo-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'boris';
+    src: url(Fontes/Boris-Garic_Big-stem-regular-free_110217/BigStem-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'buba';
+    src: url(Fontes/buba/BubaDEMO-Outline.otf);
+}
+
+@font-face {
+    font-family: 'cloud';
+    src: url(Fontes/Cloud-LightBold/Cloud-LightBold/Cloud-Bold.otf);
+}
+
+@font-face {
+    font-family: 'games';
+    src: url(Fontes/games/Games.ttf);
+}
+
+@font-face {
+    font-family: 'humblle';
+    src: url(Fontes/humblle_rought/Humblle\ Rought\ Caps.ttf);
+}
+
+@font-face {
+    font-family: 'impossible';
+    src: url(Fontes/impossible/IMPOS0__.ttf);
+}
+
+@font-face {
+    font-family: 'kensington';
+    src: url(Fontes/kensington/Kensington.ttf);
+}
+
+@font-face {
+    font-family: 'kiwi';
+    src: url(Fontes/kiwi/kiwi.ttf);
+}
+
+@font-face {
+    font-family: 'lobster';
+    src: url(Fontes/lobster/Lobster\ 1.4.otf);
+}
+
+@font-face {
+    font-family: 'steetwear';
+    src: url(Fontes/streetwear/Streetwear.otf);
+}
+
+@font-face {
+    font-family: 'tagtype';
+    src: url(Fontes/tagtype-freefont/tagtype-freefont.ttf);
+}
+
+@font-face {
+    font-family: 'ubuntu';
+    src: url(Fontes/ubuntu-font-family-0.83/ubuntu-font-family-0.83/Ubuntu-B.ttf);
+}
+
+@font-face {
+    font-family: 'vanadine';
+    src: url(Fontes/vanadine/Vanadine\ Regular.ttf);
+}
+
+
 .orbitron {
     font-family: "Orbitron", sans-serif;
     font-optical-sizing: auto;
@@ -252,7 +323,6 @@ main {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 30px;
     }
 
     .img {
@@ -260,6 +330,7 @@ main {
         height: 200px;
         border-radius: 50%;
         background-size: cover;
+
     }
 
 }
@@ -404,5 +475,4 @@ main {
         margin-right: 5px;
         margin-top: 30px;
     }
-
 }

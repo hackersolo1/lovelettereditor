@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function defaults() {
         document.querySelector('.white-theme').style.border = '4px solid black';
         switchTheme('white');
-        document.querySelectorAll('.sans, .mono, .cursiva').forEach(e => {
-            e.style.border = THEMEINFO.border.borderOff;
+        document.querySelectorAll('.font-cont button').forEach(itens => {
+            itens.style.border = THEMEINFO.border.borderOff;
         });
         document.querySelector('.serif').style.border = THEMEINFO.border.borderOn;
         document.querySelector('.downloadBtn').style.display = 'none';
@@ -27,6 +27,20 @@ document.addEventListener('DOMContentLoaded', () => {
     function switchBorder(whiteBtn, nightBtn) {
         document.querySelector('.white-theme').style.border = whiteBtn;
         document.querySelector('.night-theme').style.border = nightBtn;
+    }
+
+    function createFontsBtn() {
+        const fontCont = document.querySelector('.font-cont');
+
+        Object.entries(THEMEINFO.fonts).forEach(([className, fontValue]) => {
+            const btn = document.createElement('button');
+            btn.innerText = className;
+            btn.classList.add(className);
+            btn.style.fontFamily = fontValue;
+            btn.style.border = THEMEINFO.border.borderOff
+
+            fontCont.appendChild(btn);
+        });
     }
 
 
@@ -52,6 +66,20 @@ document.addEventListener('DOMContentLoaded', () => {
             sans: 'Lucida Sans',
             mono: 'monospace',
             cursiva: 'cursive',
+            arvo: 'arvo',
+            boris: 'boris',
+            buba: 'buba',
+            cloud: 'cloud',
+            games: 'games',
+            humblle: 'humblle',
+            impossible: 'impossible',
+            kensington: 'kensington',
+            kiwi: 'kiwi',
+            lobster: 'lobster',
+            steetwear: 'streetwear',
+            tagtype: 'tagtype',
+            ubuntu: 'ubuntu',
+            vanadine: 'vanadine',
         },
 
         border: {
@@ -100,52 +128,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.querySelector('.font-cont').addEventListener('click', (e) => {
-        if (e.target.classList == 'serif') {
-            document.querySelectorAll('.sans, .mono, .cursiva').forEach(fontsItens => {
-                fontsItens.style.border = THEMEINFO.border.borderOff;
-            });
-            document.querySelector('.preview').style.fontFamily = THEMEINFO.fonts.serif;
-            document.querySelector('.serif').style.border = THEMEINFO.border.borderOn;
-        } else if (e.target.classList == 'sans') {
-            document.querySelectorAll('.serif, .mono, .cursiva').forEach(fontsItens => {
-                fontsItens.style.border = THEMEINFO.border.borderOff;
-            });
-            document.querySelector('.preview').style.fontFamily = THEMEINFO.fonts.sans;
-            document.querySelector('.sans').style.border = THEMEINFO.border.borderOn;
-        } else if (e.target.classList == 'mono') {
-            document.querySelectorAll('.sans, .serif, .cursiva').forEach(fontsItens => {
-                fontsItens.style.border = THEMEINFO.border.borderOff;
-            });
-            document.querySelector('.preview').style.fontFamily = THEMEINFO.fonts.mono;
-            document.querySelector('.mono').style.border = THEMEINFO.border.borderOn;
-        } else if (e.target.classList == 'cursiva') {
-            document.querySelectorAll('.sans, .mono, .serif').forEach(fontsItens => {
-                fontsItens.style.border = THEMEINFO.border.borderOff;
-            });
-            document.querySelector('.preview').style.fontFamily = THEMEINFO.fonts.cursiva;
-            document.querySelector('.cursiva').style.border = THEMEINFO.border.borderOn;
+        if (e.target.tagName !== 'BUTTON') {
+            return;
         }
+
+        document.querySelectorAll('.font-cont button').forEach(btn => {
+            btn.style.border = THEMEINFO.border.borderOff;
+        });
+
+        const fontKey = e.target.classList;
+        document.querySelector('.preview').style.fontFamily = THEMEINFO.fonts[fontKey];
+
+        e.target.style.border = THEMEINFO.border.borderOn;
     });
 
     document.querySelector('.downloadBtn').addEventListener('click', () => {
-        document.querySelector('.preview').style.borderRadius = '0px';
-        document.querySelector('.preview').style.height = 'auto';
         html2canvas(document.querySelector('.preview')).then(canvas => {
-            const img = canvas.toDataURL('imagem/png');
-            setTimeout(() => {
-                const link = document.createElement('a');
-                link.href = img;
-                link.download = 'carta-personalizada.png';
-                link.click();
-            }, 100);
-            setTimeout(() => { 
-document.querySelector('.preview').style.borderRadius = '20px';
-document.querySelector('.preview').style.height = '100%';
-}, 200);
+            const link = canvas.toDataURL();
+            const a = document.createElement('a');
+            a.href = link;
+            a.download = 'carta-personalizada.png';
+            a.click();
 
         });
     });
+    createFontsBtn();
     defaults();
 })
-
-
