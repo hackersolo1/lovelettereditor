@@ -153,8 +153,8 @@ document.addEventListener('DOMContentLoaded', () => {
             a.click();
         });
         setTimeout(() => {
-            document.querySelector('.preview').style.borderRadius = '10px';
-            document.querySelector('.preview').style.height = '500px';
+            document.querySelector('.preview').style.borderRadius = '20px';
+            document.querySelector('.preview').style.height = '100%';
         }, 100);
     });
     createFontsBtn();
