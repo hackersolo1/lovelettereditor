@@ -143,14 +143,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.querySelector('.downloadBtn').addEventListener('click', () => {
+        document.querySelector('.preview').style.borderRadius = '0';
+        document.querySelector('.preview').style.height = 'auto';
         html2canvas(document.querySelector('.preview')).then(canvas => {
             const link = canvas.toDataURL();
             const a = document.createElement('a');
             a.href = link;
             a.download = 'carta-personalizada.png';
             a.click();
-
         });
+        setTimeout(() => {
+            document.querySelector('.preview').style.borderRadius = '10px';
+            document.querySelector('.preview').style.height = '500px';
+        }, 100);
     });
     createFontsBtn();
     defaults();
